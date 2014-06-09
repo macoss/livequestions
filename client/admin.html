@@ -63,10 +63,10 @@
 <template name="eachMessage">
   <tr>
     {{#if Approved }}
-      <td class="rejectMessage">Reject</td>
-      <td class="selectedMessage">{{Body}}</td>
+      <td class="rejectMessage pointer">Reject</td>
+      <td class="selectedMessage pointer">{{Body}}</td>
     {{else}}
-      <td class="approveMessage">Approve</td>
+      <td class="approveMessage pointer">Approve</td>
       <td>{{Body}}</td>
     {{/if}}
   </tr>

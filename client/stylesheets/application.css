@@ -6,3 +6,16 @@ body {
   height: 100%;
 }
 
+
+.pointer {
+  cursor: pointer;
+}
+
+.approveMessage {
+  color: green;
+}
+
+.rejectMessage {
+  color: red;
+}
+
