@@ -1,0 +1,74 @@
+<template name="admin">
+<head>
+  {{> title }}
+</head>
+
+<body>
+  <div class="container">
+    {{> header}}
+    <div id="content">
+      <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+        <li class="active"><a href="#incomming" data-toggle="tab">Incomming</a></li>
+        <li><a href="#approved" data-toggle="tab">Approved</a></li>
+      </ul>
+      <div id="my-tab-content" class="tab-content">
+        <div class="tab-pane active" id="incomming">
+          {{> incomming}}
+        </div>
+        <div class="tab-pane" id="approved">
+          {{> approved}}
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+    </div>
+  </div>
+</body>
+</template>
+
+<template name="incomming">
+  <h2>Incomming</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Approve</th>
+        <th>Messages</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each smsMessages}}
+        {{> eachMessage}} 
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="approved">
+  <h2>Approved</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Approve</th>
+        <th>Messages</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each approvedMessages}}
+        {{> eachMessage}}
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="eachMessage">
+  <tr>
+    {{#if Approved }}
+      <td class="rejectMessage">Reject</td>
+      <td class="selectedMessage">{{Body}}</td>
+    {{else}}
+      <td class="approveMessage">Approve</td>
+      <td>{{Body}}</td>
+    {{/if}}
+  </tr>
+</template>
+

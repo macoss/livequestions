@@ -1,0 +1,18 @@
+<template name="screen">
+<head>
+  <title>Live Questions</title>
+</head>
+<body id="screen">
+  <div id="screen_content">
+    <div id="screen_text">
+        {{> message}}
+    </div>
+  </div>
+</body>
+</template>
+
+<template name="message">
+{{#each selectedMessage}}
+  {{Body}}
+{{/each}}
+</template>
