@@ -33,11 +33,12 @@
       <tr>
         <th>Approve</th>
         <th>Messages</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
       {{#each smsMessages}}
-        {{> eachMessage}} 
+        {{> eachIncommingMessage}} 
       {{/each}}
     </tbody>
   </table>
@@ -64,11 +65,23 @@
   <tr>
     {{#if Approved }}
       <td class="rejectMessage pointer">Reject</td>
-      <td class="selectedMessage pointer">{{Body}}</td>
+      {{#if Selected }}
+        <td class="selectedMessage selected pointer">{{Body}}</td>
+      {{else}}
+        <td class="selectedMessage pointer">{{Body}}</td>
+      {{/if}}
     {{else}}
       <td class="approveMessage pointer">Approve</td>
       <td>{{Body}}</td>
     {{/if}}
+  </tr>
+</template>
+  
+<template name="eachIncommingMessage">
+  <tr>
+    <td class="approveMessage pointer">Approve</td>
+    <td>{{Body}}</td>
+    <td class="deleteMessage pointer">Delete</td>
   </tr>
 </template>
 

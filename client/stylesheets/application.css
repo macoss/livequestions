@@ -19,3 +19,10 @@ body {
   color: red;
 }
 
+.deleteMessage {
+  color: red;
+}
+
+.selected {
+  color: green;
+}
