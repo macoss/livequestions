@@ -14,9 +14,11 @@
       <div id="my-tab-content" class="tab-content">
         <div class="tab-pane active" id="incomming">
           {{> incomming}}
+          <p>Rejected messages will be listed in <span class="rejectMessage">red.</span></p>
         </div>
         <div class="tab-pane" id="approved">
           {{> approved}}
+          <p>The selected question that will be shown on the sceen will be <span class="selected">green.</span></p>
         </div>
       </div>
     </div>
@@ -80,8 +82,34 @@
 <template name="eachIncommingMessage">
   <tr>
     <td class="approveMessage pointer">Approve</td>
-    <td>{{Body}}</td>
+    {{#if RejectedAt }}
+    <td class="rejectMessage selectedMessage pointer">{{Body}}</td>
+    {{else}}
+      <td class="selectedMessage pointer">{{Body}}</td>
+    {{/if}}
     <td class="deleteMessage pointer">Delete</td>
   </tr>
 </template>
 
+<template name="editMessage">
+<!-- Modal -->
+<div class="modal fade" id="editItem" tabindex="-1" role="dialog" aria-labelledby="Edit Item" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Edit Message</h3>
+      </div>
+      <div class="modal-body" >
+        <div class="form-group">
+          <input type="hidden" id="messageId" value="{{message._id}}" />
+          <textarea id="message" name="message" class="form-control">{{message.Body}}</textarea>        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-success">Save</a>
+        <a href="#" class="btn" data-dismiss="modal">close</a>
+      </div>
+    </div>
+  </div>
+</div>
+</template>

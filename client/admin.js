@@ -13,11 +13,12 @@ Template.eachMessage.events({
     Messages.update(this._id, {$set: {Approved: true}});
   },
   'click .rejectMessage': function () {
-    Messages.update(this._id, {$set: {Approved: false}});
+    var now = new Date();
+    Messages.update(this._id, {$set: {Approved: false, RejectedAt: now.valueOf(), Selected: false}});
   },
   'click .selectedMessage': function () {
     if(this.Selected) {
-      Messages.clearSelection(this._id);
+      Messages.clearSelection();
     } else {
       Messages.updateSelected(this._id);
     }
@@ -31,5 +32,23 @@ Template.eachIncommingMessage.events({
   'click .deleteMessage': function () {
     var now = new Date();
     Messages.update(this._id, {$set: {DeletedAt: now.valueOf()}});
+  },
+  'click .selectedMessage': function (e,t) {
+    UI.insert(UI.renderWithData(Template.editMessage, {message: this}), document.body);
+    //e.preventDefault();
+    $("#editItem").modal("show");
   }
 });
+
+Template.editMessage.events({
+  'click .btn-success': function() {
+    var edited = document.getElementById("message").value;
+    var id = document.getElementById("messageId").value;
+    Messages.update(id,{$set: {Body: edited}});
+    $("#editItem").bind('hidden', function() {
+      $("#editItem").remove();
+    }).modal("hide");
+  }
+});
+
+
