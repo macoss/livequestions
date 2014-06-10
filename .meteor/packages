@@ -11,3 +11,4 @@ accounts-password
 accounts-ui
 bootstrap
 iron-router
+simple-form

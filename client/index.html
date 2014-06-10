@@ -6,6 +6,22 @@
 <body>
   <div class="container">
     {{> header}}
+    <div id="content">
+      {{> addQuestion }}
+    </div>
+    <div id="footer">
+    </div>
   </div>
 </body>
 </template>
+
+<template name="addQuestion">
+      <fieldset>
+        <legend>{{Body}}</legend>
+        <div class="form-group">
+          {{text_area 'question'}}<br />
+          <input type="button" id="add-question" value="Submit Question" class="btn btn-default" />
+        </div>
+      </fieldset>
+</template>
+
