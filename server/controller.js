@@ -1,6 +1,7 @@
 PostSmsController = RouteController.extend({
   action: function() {
-    var params = this.params;
+    var params = this.request.body;
+    console.log(params);
     var Body, FromCity, FromState, FromZip, FromCountry, ToCity, ToState, ToCountry;
 
     if(params.Body) {
