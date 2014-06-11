@@ -1,6 +1,6 @@
 // This is a main page for the application.
 
-Template.incomming.smsMessages = function () {
+Template.incoming.smsMessages = function () {
   return Messages.find({Approved: false, DeletedAt: {$exists: false}}, {sort: {CreatedAt: 1}});
 };
 
@@ -25,7 +25,7 @@ Template.eachMessage.events({
   }
 });
 
-Template.eachIncommingMessage.events({
+Template.eachIncomingMessage.events({
   'click .approveMessage': function () {
     Messages.update(this._id, {$set: {Approved: true}});
   },

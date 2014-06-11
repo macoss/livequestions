@@ -8,12 +8,12 @@
     {{> header}}
     <div id="content">
       <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li class="active"><a href="#incomming" data-toggle="tab">Incomming</a></li>
+        <li class="active"><a href="#incoming" data-toggle="tab">Incoming</a></li>
         <li><a href="#approved" data-toggle="tab">Approved</a></li>
       </ul>
       <div id="my-tab-content" class="tab-content">
-        <div class="tab-pane active" id="incomming">
-          {{> incomming}}
+        <div class="tab-pane active" id="incoming">
+          {{> incoming}}
           <p>Rejected messages will be listed in <span class="rejectMessage">red.</span></p>
         </div>
         <div class="tab-pane" id="approved">
@@ -28,8 +28,8 @@
 </body>
 </template>
 
-<template name="incomming">
-  <h2>Incomming</h2>
+<template name="incoming">
+  <h2>Incoming</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -40,7 +40,7 @@
     </thead>
     <tbody>
       {{#each smsMessages}}
-        {{> eachIncommingMessage}} 
+        {{> eachIncomingMessage}} 
       {{/each}}
     </tbody>
   </table>
@@ -79,7 +79,7 @@
   </tr>
 </template>
   
-<template name="eachIncommingMessage">
+<template name="eachIncomingMessage">
   <tr>
     <td class="approveMessage pointer">Approve</td>
     {{#if RejectedAt }}
