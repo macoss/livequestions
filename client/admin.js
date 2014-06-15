@@ -48,6 +48,16 @@ Template.editMessage.events({
     $("#editItem").bind('hidden', function() {
       $("#editItem").remove();
     }).modal("hide");
+  },
+  'click .btn-close': function () {
+    $("#editItem").bind('hidden', function() {
+      $("#editItem").remove();
+    }).modal("hide");
+  },
+  'click .x-close': function () {
+    $("#editItem").bind('hidden', function() {
+      $("#editItem").remove();
+    }).modal("hide");
   }
 });
 

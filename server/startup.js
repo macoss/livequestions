@@ -1,5 +1,8 @@
 // Server startup file
 Meteor.startup(function () {
+  Accounts.config({
+    forbidClientAccountCreation : true
+  });
   // code to run on server at startup
   //
   // TODO: This finction should be protected from the client:
