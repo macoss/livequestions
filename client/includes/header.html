@@ -6,8 +6,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="{{pathFor 'index'}}">Live Questions</a>
+      <a class="brand" href="{{pathFor 'Home'}}">Live Questions</a>
       <div class="nav-collapse collapse">
+        {{#if currentUser}}
+          <ul class="nav">
+            <li><a href="{{pathFor 'Home'}}">Submit Question</a></li>
+            <li><a href="{{pathFor 'Admin'}}">Administration</a></li>
+            <li><a href="{{pathFor 'Screen'}}">Output</a></li>
+          </ul>
+        {{/if}}
         <ul class="nav pull-right">
           <li>{{> loginButtons}}</li>
         </ul>

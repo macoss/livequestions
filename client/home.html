@@ -1,9 +1,4 @@
-<template name="index">
-<head>
-  {{> title }}
-</head>
-
-<body>
+<template name="Home">
   <div class="container">
     {{> header}}
     <div id="content">
@@ -12,16 +7,15 @@
     <div id="footer">
     </div>
   </div>
-</body>
 </template>
 
 <template name="addQuestion">
-      <fieldset>
+  <fieldset>
         <legend>{{Body}}</legend>
         <div class="form-group">
           {{text_area 'question'}}<br />
           <input type="button" id="add-question" value="Submit Question" class="btn btn-default" />
         </div>
-      </fieldset>
+  </fieldset>
 </template>
 
