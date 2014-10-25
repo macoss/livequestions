@@ -8,6 +8,7 @@ accounts-base
 accounts-password
 accounts-ui
 bootstrap
-iron-router
-simple-form
+joshowens:simple-form
 insecure
+iron:router
+
