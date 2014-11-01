@@ -5,3 +5,22 @@ Meteor.publish("Messages", function () {
 Meteor.publish("selectedMessages", function () {
   return Messages.find({Selected: true}, {Body: 1});
 });
+
+// Allow users to create questions and 
+Messages.allow({
+    insert: function (userId,doc) {
+      /* user and doc checks ,
+      return true to allow insert */
+      return true;
+    },
+    remove: function (userId,doc) {
+      if(userId) {
+        return true;
+      }
+    },
+    update: function (userId,doc) {
+      if(userId) {
+        return true;
+      }
+    }
+});

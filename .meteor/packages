@@ -9,6 +9,4 @@ accounts-password
 accounts-ui
 bootstrap
 joshowens:simple-form
-insecure
 iron:router
-
