@@ -1,21 +1,21 @@
 <template name="Home">
-  <div class="container">
     {{> header}}
-    <div id="content">
+    <div class="container">
+      <p> This will soon represent the topic for the questions</p>
       {{> addQuestion }}
     </div>
     <div id="footer">
     </div>
-  </div>
+
 </template>
 
 <template name="addQuestion">
   <fieldset>
-        <legend>{{Body}}</legend>
-        <div class="form-group">
-          {{text_area 'question'}}<br />
-          <input type="button" id="add-question" value="Submit Question" class="btn btn-default" />
-        </div>
+      <legend>{{Body}}</legend>
+      <div class="form-group">
+	{{text_area 'question'}}<br />
+	<input type="button" id="add-question" value="Submit Question" class="btn btn-default" />
+      </div>
   </fieldset>
 </template>
 
