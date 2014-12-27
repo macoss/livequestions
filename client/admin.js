@@ -9,10 +9,8 @@ Template.approved.approvedMessages = function () {
 };
 
 Template.eachMessage.events({
-  'click .approveMessage': function () {
-    Messages.update(this._id, {$set: {Approved: true}});
-  },
-  'click .rejectMessage': function () {
+
+  'click .buttonReject': function () {
     var now = new Date();
     Messages.update(this._id, {$set: {Approved: false, RejectedAt: now.valueOf(), Selected: false}});
   },
@@ -26,10 +24,10 @@ Template.eachMessage.events({
 });
 
 Template.eachIncomingMessage.events({
-  'click .approveMessage': function () {
+  'click .btn-success': function () {
     Messages.update(this._id, {$set: {Approved: true}});
   },
-  'click .deleteMessage': function () {
+  'click .btn-danger': function () {
     var now = new Date();
     Messages.update(this._id, {$set: {DeletedAt: now.valueOf()}});
   },

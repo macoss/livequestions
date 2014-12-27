@@ -1,6 +1,6 @@
 <template name="header">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  
+ 
 <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container">
@@ -23,7 +23,7 @@
 	    {{/if}}
             </ul>
 	    <ul class="nav navbar-nav pull-right">
-	      {{> loginButtons }}
+	      <li><a href="{{pathFor 'Login'}}">Login</a></li>
 	    </ul>
         </div>
     </div>
