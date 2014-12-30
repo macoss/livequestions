@@ -23,7 +23,11 @@
 	    {{/if}}
             </ul>
 	    <ul class="nav navbar-nav pull-right">
-	      <li><a href="{{pathFor 'Login'}}">Login</a></li>
+              {{#if currentUser}}
+                <li><a href="{{pathFor 'Account'}}">{{currentUser.username}}</a></li>
+              {{else}}
+                <li><a href="{{pathFor 'Login'}}">Login</a></li>
+              {{/if}}
 	    </ul>
         </div>
     </div>

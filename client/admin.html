@@ -18,6 +18,7 @@
       </div>
     </div>
     <div id="footer">
+      {{> footer }}
     </div>
   </div>
   </template>
@@ -28,14 +29,16 @@
 
 <template name="incoming">
   <h2>Incoming</h2>
-  <table class="table tagle-striped">
+  <table class="table table-striped">
     <thead>
       <tr>
 	<th>Messages</th>
+	<th></th>
       </tr>
+      
     </thead>
     <tbody>
-      {{#each smsMessages}}
+      {{#each incomingMessages}}
         {{> eachIncomingMessage}} 
       {{/each}}
     </tbody>
@@ -48,6 +51,7 @@
     <thead>
       <tr>
         <th>Messages</th>
+	<th></th>
       </tr>
     </thead>
     <tbody>
@@ -61,14 +65,11 @@
 <template name="eachMessage">
   <tr>
       {{#if Selected }}
-      <td class="selectedMessage selected pointer">{{Body}}
-	<a href="#" class="btn btn-danger btn-xs buttonReject">Reject</a>
-      </td>
+      <td class="selectedMessage selected pointer">{{Body}}</td>
       {{else}}
       <td class="selectedMessage pointer">{{Body}}</td>
-	<td><a href="#" class="btn btn-danger btn-xs buttonReject">Reject</a>
-      </td>
       {{/if}}
+      <td class="col-md-1"><a href="#" class="btn btn-danger btn-xs buttonReject">Reject</a></td>
   </tr>
 </template>
   
@@ -79,7 +80,7 @@
     {{else}}
       <td class="selectedMessage pointer">{{Body}}</td>
     {{/if}}
-    <td>
+    <td class="col-md-2">
       <a href="#" class="btn btn-success btn-xs">Approve</a>
       <a href="#" class="btn btn-danger btn-xs">Delete</a> 
     </td>

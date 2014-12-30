@@ -1,13 +1,5 @@
 // This is a main page for the application.
 
-Template.incoming.smsMessages = function () {
-  return Messages.find({Approved: false, DeletedAt: {$exists: false}}, {sort: {CreatedAt: 1}});
-};
-
-Template.approved.approvedMessages = function () {
-  return Messages.find({Approved: true, DeletedAt: {$exists: false}}, {sort: {CreatedAt: 1}});
-};
-
 Template.eachMessage.events({
 
   'click .buttonReject': function () {
