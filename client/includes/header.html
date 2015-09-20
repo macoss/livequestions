@@ -25,6 +25,7 @@
 	    <ul class="nav navbar-nav pull-right">
               {{#if currentUser}}
                 <li><a href="{{pathFor 'Account'}}">{{currentUser.username}}</a></li>
+                <li><a href="#" id="signOut">Sign Out</a></li>
               {{else}}
                 <li><a href="{{pathFor 'Login'}}">Login</a></li>
               {{/if}}
