@@ -11,3 +11,4 @@ joshowens:simple-form
 iron:router
 mrt:bootstrap-3
 gfk:notifications
+standard-minifiers

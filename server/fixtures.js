@@ -9,3 +9,7 @@ if ( Meteor.users.find().count() === 0 ) {
     }
   });
 }
+
+if ( Topics.find().count() === 0 ) {
+	Topics.insert({Body: "Ask us about the Live Questions app"});
+}

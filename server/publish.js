@@ -6,6 +6,10 @@ Meteor.publish("selectedMessages", function () {
   return Messages.find({Selected: true}, {Body: 1});
 });
 
+Meteor.publish("Topics", function () {
+	return Topics.find({});
+});
+
 // Allow users to create questions and 
 Messages.allow({
     insert: function (userId,doc) {
