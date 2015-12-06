@@ -4,7 +4,8 @@
     <div id="content">
       <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
         <li class="active"><a href="#incoming" data-toggle="tab">Incoming</a></li>
-        <li><a href="#approved" data-toggle="tab">Approved</a></li>
+		<li><a href="#approved" data-toggle="tab">Approved</a></li>
+		<li><a href="#topic" data-toggle="tab">Topic</a></li>
       </ul>
       <div id="my-tab-content" class="tab-content">
         <div class="tab-pane active" id="incoming">
@@ -14,7 +15,10 @@
         <div class="tab-pane" id="approved">
           {{> approved}}
           <p>The selected question that will be shown on the sceen will be <span class="selected">green.</span></p>
-        </div>
+	  	</div>
+		<div class="tab-pane" id="topic">
+			{{> editTopic}}
+		</div>
       </div>
     </div>
     <div id="footer">
@@ -60,6 +64,16 @@
       {{/each}}
     </tbody>
   </table>
+</template>
+
+<template name="editTopic">
+	<h2>Topic</h2>
+  	<fieldset>
+		<div class="form-group">
+			<input type="hidden" id="topicId" value="{{topicBody._id}}" />
+			<textarea id="topicText" name="topicText" class="form-control">{{topicBody.Body}}</textarea> <br />
+			<input type="button" id="update-topic" value="Update Topic" class="btn btn-default" />
+      </div> </fieldset>
 </template>
 
 <template name="eachMessage">

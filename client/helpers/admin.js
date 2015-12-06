@@ -10,3 +10,9 @@ Template.approved.helpers({
   }
 });
 
+Template.editTopic.helpers({
+	topicBody: function() {
+		return Topics.findOne({});
+	}
+});
+

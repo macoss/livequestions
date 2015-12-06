@@ -51,4 +51,18 @@ Template.editMessage.events({
   }
 });
 
+Template.editTopic.events({
+	'click #update-topic': function () {
+		var id = document.getElementById("topicId").value;
+		var text = document.getElementById("topicText").value;
+
+		if(text) {
+			Topics.update(id, {$set: {Body: text}});
+			Notifications.success("Topic", "The topic has been updated");
+		} else {
+			Notifications.error("Error", "The topic was not saved");
+		}	
+	}
+});
+
 

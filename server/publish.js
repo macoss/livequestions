@@ -28,3 +28,16 @@ Messages.allow({
       }
     }
 });
+
+Topics.allow({
+	insert: function (userId,doc) {
+		if(userId) {
+			return true;
+		}
+	},
+	update: function (userId,doc) {
+		if(userId) {
+			return true;
+		}
+	}	
+});
