@@ -1,0 +1,119 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :account_sid, class: "control-label" %>
+    <%= text_input f, :account_sid, class: "form-control" %>
+    <%= error_tag f, :account_sid %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :body, class: "control-label" %>
+    <%= text_input f, :body, class: "form-control" %>
+    <%= error_tag f, :body %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :from, class: "control-label" %>
+    <%= text_input f, :from, class: "form-control" %>
+    <%= error_tag f, :from %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :from_city, class: "control-label" %>
+    <%= text_input f, :from_city, class: "form-control" %>
+    <%= error_tag f, :from_city %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :from_country, class: "control-label" %>
+    <%= text_input f, :from_country, class: "form-control" %>
+    <%= error_tag f, :from_country %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :from_state, class: "control-label" %>
+    <%= text_input f, :from_state, class: "form-control" %>
+    <%= error_tag f, :from_state %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :from_zip, class: "control-label" %>
+    <%= text_input f, :from_zip, class: "form-control" %>
+    <%= error_tag f, :from_zip %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :message_sid, class: "control-label" %>
+    <%= text_input f, :message_sid, class: "form-control" %>
+    <%= error_tag f, :message_sid %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :number_media, class: "control-label" %>
+    <%= number_input f, :number_media, class: "form-control" %>
+    <%= error_tag f, :number_media %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :number_segments, class: "control-label" %>
+    <%= number_input f, :number_segments, class: "form-control" %>
+    <%= error_tag f, :number_segments %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :sms_message_sid, class: "control-label" %>
+    <%= text_input f, :sms_message_sid, class: "form-control" %>
+    <%= error_tag f, :sms_message_sid %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :sms_sid, class: "control-label" %>
+    <%= text_input f, :sms_sid, class: "form-control" %>
+    <%= error_tag f, :sms_sid %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :sms_status, class: "control-label" %>
+    <%= text_input f, :sms_status, class: "form-control" %>
+    <%= error_tag f, :sms_status %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :to, class: "control-label" %>
+    <%= text_input f, :to, class: "form-control" %>
+    <%= error_tag f, :to %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :to_city, class: "control-label" %>
+    <%= text_input f, :to_city, class: "form-control" %>
+    <%= error_tag f, :to_city %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :to_country, class: "control-label" %>
+    <%= text_input f, :to_country, class: "form-control" %>
+    <%= error_tag f, :to_country %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :to_state, class: "control-label" %>
+    <%= text_input f, :to_state, class: "form-control" %>
+    <%= error_tag f, :to_state %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :to_zip, class: "control-label" %>
+    <%= text_input f, :to_zip, class: "form-control" %>
+    <%= error_tag f, :to_zip %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

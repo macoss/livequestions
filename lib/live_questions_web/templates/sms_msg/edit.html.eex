@@ -1,0 +1,5 @@
+<h2>Edit Sms msg</h2>
+
+<%= render "form.html", Map.put(assigns, :action, sms_msg_path(@conn, :update, @sms_msg)) %>
+
+<span><%= link "Back", to: sms_msg_path(@conn, :index) %></span>

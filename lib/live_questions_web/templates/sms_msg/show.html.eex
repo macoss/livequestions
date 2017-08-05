@@ -1,0 +1,98 @@
+<h2>Show Sms msg</h2>
+
+<ul>
+
+  <li>
+    <strong>Account sid:</strong>
+    <%= @sms_msg.account_sid %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @sms_msg.body %>
+  </li>
+
+  <li>
+    <strong>From:</strong>
+    <%= @sms_msg.from %>
+  </li>
+
+  <li>
+    <strong>From city:</strong>
+    <%= @sms_msg.from_city %>
+  </li>
+
+  <li>
+    <strong>From country:</strong>
+    <%= @sms_msg.from_country %>
+  </li>
+
+  <li>
+    <strong>From state:</strong>
+    <%= @sms_msg.from_state %>
+  </li>
+
+  <li>
+    <strong>From zip:</strong>
+    <%= @sms_msg.from_zip %>
+  </li>
+
+  <li>
+    <strong>Message sid:</strong>
+    <%= @sms_msg.message_sid %>
+  </li>
+
+  <li>
+    <strong>Number media:</strong>
+    <%= @sms_msg.number_media %>
+  </li>
+
+  <li>
+    <strong>Number segments:</strong>
+    <%= @sms_msg.number_segments %>
+  </li>
+
+  <li>
+    <strong>Sms message sid:</strong>
+    <%= @sms_msg.sms_message_sid %>
+  </li>
+
+  <li>
+    <strong>Sms sid:</strong>
+    <%= @sms_msg.sms_sid %>
+  </li>
+
+  <li>
+    <strong>Sms status:</strong>
+    <%= @sms_msg.sms_status %>
+  </li>
+
+  <li>
+    <strong>To:</strong>
+    <%= @sms_msg.to %>
+  </li>
+
+  <li>
+    <strong>To city:</strong>
+    <%= @sms_msg.to_city %>
+  </li>
+
+  <li>
+    <strong>To country:</strong>
+    <%= @sms_msg.to_country %>
+  </li>
+
+  <li>
+    <strong>To state:</strong>
+    <%= @sms_msg.to_state %>
+  </li>
+
+  <li>
+    <strong>To zip:</strong>
+    <%= @sms_msg.to_zip %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: sms_msg_path(@conn, :edit, @sms_msg) %></span>
+<span><%= link "Back", to: sms_msg_path(@conn, :index) %></span>

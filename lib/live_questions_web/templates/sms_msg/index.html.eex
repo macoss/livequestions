@@ -1,0 +1,60 @@
+<h2>Listing Sms msgs</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Account sid</th>
+      <th>Body</th>
+      <th>From</th>
+      <th>From city</th>
+      <th>From country</th>
+      <th>From state</th>
+      <th>From zip</th>
+      <th>Message sid</th>
+      <th>Number media</th>
+      <th>Number segments</th>
+      <th>Sms message sid</th>
+      <th>Sms sid</th>
+      <th>Sms status</th>
+      <th>To</th>
+      <th>To city</th>
+      <th>To country</th>
+      <th>To state</th>
+      <th>To zip</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for sms_msg <- @sms_msgs do %>
+    <tr>
+      <td><%= sms_msg.account_sid %></td>
+      <td><%= sms_msg.body %></td>
+      <td><%= sms_msg.from %></td>
+      <td><%= sms_msg.from_city %></td>
+      <td><%= sms_msg.from_country %></td>
+      <td><%= sms_msg.from_state %></td>
+      <td><%= sms_msg.from_zip %></td>
+      <td><%= sms_msg.message_sid %></td>
+      <td><%= sms_msg.number_media %></td>
+      <td><%= sms_msg.number_segments %></td>
+      <td><%= sms_msg.sms_message_sid %></td>
+      <td><%= sms_msg.sms_sid %></td>
+      <td><%= sms_msg.sms_status %></td>
+      <td><%= sms_msg.to %></td>
+      <td><%= sms_msg.to_city %></td>
+      <td><%= sms_msg.to_country %></td>
+      <td><%= sms_msg.to_state %></td>
+      <td><%= sms_msg.to_zip %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: sms_msg_path(@conn, :show, sms_msg), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: sms_msg_path(@conn, :edit, sms_msg), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: sms_msg_path(@conn, :delete, sms_msg), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Sms msg", to: sms_msg_path(@conn, :new) %></span>
